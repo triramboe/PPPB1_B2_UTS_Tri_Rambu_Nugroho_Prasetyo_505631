@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GetStartedActivity">
+
+    <ImageView
+        android:id="@+id/getStartedBg1"
+        android:layout_width="match_parent"
+        android:layout_height="184dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="-109dp"
+        android:src="@drawable/get_started_asset_2" />
+
+    <LinearLayout
+        android:id="@+id/edit_text_getStarted"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/getStartedTittle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hi, ayo isikan datamu!"
+            android:textAlignment="center"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="24sp"
+            android:textColor="@color/blue_two"
+            android:layout_marginTop="50dp"
+             />
+
+        <EditText
+            android:id="@+id/namaField"
+            style="@style/edit_field"
+            android:inputType="text"
+            android:hint="Masukan Nama Anda"
+            android:layout_marginTop="30dp"
+            />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+            <EditText
+                android:id="@+id/beratBadanField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                style="@style/edit_field"
+                android:layout_marginTop="0dp"
+                android:hint="Masukan Berat Badan Anda"
+                android:inputType="text"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="kg"
+                android:textColor="@color/blue_one" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
+            <EditText
+                android:id="@+id/tujuanBBField"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                style="@style/edit_field"
+                android:layout_marginTop="0dp"
+                android:hint="Masukan Berat Badan Tujuan"
+                android:inputType="text"
+                android:layout_marginEnd="10dp"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Kg"
+                android:textColor="@color/blue_one"
+                android:fontFamily="@font/poppins_semibold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="25dp">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Tujuan"
+                android:textColor="@color/blue_one"
+                android:fontFamily="@font/poppins_semibold"/>
+            <Spinner
+                android:id="@+id/tujuanProgramSpinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5"
+                style="@style/edit_field"
+                android:layout_marginTop="0dp" />
+        </LinearLayout>
+
+
+        <EditText
+        android:id="@+id/tanggalField"
+        style="@style/edit_field"
+        android:hint="Pilih tanggal target"
+        android:inputType="text"
+        />
+
+        <EditText
+            android:id="@+id/targetKaloriField"
+            style="@style/edit_field"
+            android:hint="Masukan target kalori per hari"
+            android:inputType="text"
+            />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/getStartedBg2"
+        android:layout_width="match_parent"
+        android:layout_height="277dp"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/edit_text_getStarted"
+        android:layout_marginBottom="-33dp"
+        android:src="@drawable/get_started_assset_1" />
+
+    <Button
+        android:id="@+id/btnGetStarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/blue_one"
+        android:fontFamily="@font/poppins_bold"
+        android:text="Simpan"
+        android:textAlignment="center"
+        android:textColor="@color/white" />
+
+</RelativeLayout>

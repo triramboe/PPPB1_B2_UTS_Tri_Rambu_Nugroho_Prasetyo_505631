@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/headerHome"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/blue_two">
+
+        <TextView
+            android:id="@+id/namaHome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_semibold"
+            android:text="Hai"></TextView>
+        <TextView
+            android:id="@+id/tanggalHomePage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Tanggal"
+            android:padding="10dp"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintStart_toEndOf="@+id/haiTextView"
+            app:layout_constraintTop_toTopOf="@+id/headerHome"
+        />
+    </LinearLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerHome">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toTopOf="parent">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:padding="10dp"
+                    android:text="SIsa Kalori"
+                    android:textColor="@color/blue_one"></TextView>
+                <TextView
+                    android:id="@+id/sisakaloriFIeld"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/poppins_regular"
+                    android:padding="10dp"
+                    android:text="Sisa Kalori"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/blue_two"
+                    app:layout_constraintStart_toEndOf="@+id/haiTextView"
+                    app:layout_constraintTop_toTopOf="@+id/headerHome" />
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintSubTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/blue_one"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+                <LinearLayout
+                    android:id="@+id/textContainer0"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/beratBadan"
+                        style="@style/TextStyle"
+                        android:text="Berat Badan" />
+
+                    <TextView
+                        android:id="@+id/goalsBB"
+                        style="@style/TextStyle"
+                        android:text="Target Berat Badan" />
+
+                    <TextView
+                        android:id="@+id/goals"
+                        style="@style/TextStyle"
+                        android:text="Tujuan" />
+
+                    <TextView
+                        android:id="@+id/goalsTanggal"
+                        style="@style/TextStyle"
+                        android:text="Tanggal Tujuan" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:textAlignment="textEnd">
+
+                    <TextView
+                        android:id="@+id/bbField"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+
+                    <TextView
+                        android:id="@+id/tbbField"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+
+                    <TextView
+                        android:id="@+id/mygoalsField"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+                    <TextView
+                        android:id="@+id/tglField"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintMakanPagi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:background="@color/blue_one"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/contraintSubTitle">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/plus"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textContainer"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/textContainer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/makanPagi"
+                        style="@style/TextStyle"
+                        android:text="Makan Pagi" />
+
+                    <TextView
+                        android:id="@+id/workoutPagi"
+                        style="@style/TextStyle"
+                        android:text="Workout Pagi" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textContainer"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/kaloriMakanPagi"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+
+                    <TextView
+                        android:id="@+id/kaloriWorkoutPagi"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintMakanSiang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue_two"
+                android:layout_marginTop="30dp"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/contraintMakanPagi">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/plus"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textContainer2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/textContainer2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/makanSiang"
+                        style="@style/TextStyle"
+                        android:text="Makan Siang" />
+
+                    <TextView
+                        android:id="@+id/workoutSiang"
+                        style="@style/TextStyle"
+                        android:text="Workout Siang" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textContainer2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/kaloriMakanSiang"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+
+                    <TextView
+                        android:id="@+id/kaloriWorkoutSiang"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contraintMakanMalam"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blue_one"
+                android:layout_marginTop="30dp"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/contraintMakanSiang">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/plus"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/textContainer3"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:id="@+id/textContainer3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imageView3"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/makanMalam"
+                        style="@style/TextStyle"
+                        android:text="Makan Malam" />
+
+                    <TextView
+                        android:id="@+id/workoutMalam"
+                        style="@style/TextStyle"
+                        android:text="Workout Malam" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textContainer3"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/kaloriMakanMalam"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+
+                    <TextView
+                        android:id="@+id/kaloriWorkoutMalam"
+                        style="@style/TextStyle"
+                        android:text="250 kcal" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+            <Button
+                android:id="@+id/btnInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contraintMakanMalam"
+                android:text="Masukan Data"
+                android:fontFamily="@font/poppins_bold"
+                android:textSize="16dp"
+                android:backgroundTint="@color/blue_one"
+                android:layout_marginTop="50dp"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
