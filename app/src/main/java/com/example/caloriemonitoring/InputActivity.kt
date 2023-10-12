@@ -15,11 +15,7 @@ class InputActivity : AppCompatActivity() {
     )
 
     companion object{
-        const val EXTRA_NAMA_MAKANAN = "extra_nama_makanan"
-        const val EXTRA_WAKTU_MAKAN = "extra_waktu_makan"
         const val EXTRA_JUMLAH_KALORI = "extra_jumlah_kalori"
-        const val EXTRA_NAMA_WORKOUT = "extra_nama_workout"
-        const val EXTRA_DURASI_WORKOUT = "extra_duraasi_workout"
         const val EXTRA_KALORI_TERBAKAR = "extra_kalori_terbakar"
         const val EXTRA_SISA_KALORI = "extra_sisa_kalori"
         const val EXTRA_JENIS = "extra_jenis"
@@ -49,32 +45,8 @@ class InputActivity : AppCompatActivity() {
             val btnSave = binding.btnSave
 
             btnSave.setOnClickListener {
-                // Dapatkan data yang diinput dari form
-                val namaMakanan = binding.namaMakananField.text.toString()
-                val jumlahKalori = binding.jumlahKaloriField.text.toString().toInt()
 
-                // Hitung total kalori masukan (kalori in)
-                totalKaloriIn += jumlahKalori
-
-                // Dapatkan data kalori out (sesuai dengan nama variabel yang sesuai di Activity Input)
-                val namaWorkout = binding.namaWorkoutField.text.toString()
-                val durasiWorkout = binding.durasiWorkoutField.text.toString().toInt()
-                val kaloriTerbakar = binding.kaloriTerbakarField.text.toString().toInt()
-
-                // Hitung total kalori keluaran (kalori out)
-                totalKaloriOut += kaloriTerbakar
-
-                // Hitung sisa kalori berdasarkan target maksimum kalori harian
-                val targetKaloriString = intent.getStringExtra(EXTRA_SISA_KALORI)
-                val targetKalori = targetKaloriString?.toIntOrNull() ?: 0
-                    sisaKalori = targetKalori - (totalKaloriIn - totalKaloriOut)
-
-                // Kembali ke Activity Home dan kirim sisa kalori jika diperlukan
                 val intentToHomeActivity = Intent(this@InputActivity, HomeActivity::class.java)
-                intentToHomeActivity.putExtra(HomeActivity.EXTRA_SISA_KALORI, sisaKalori)
-
-                val namaMkn = namaMakananField.text.toString()
-                intentToHomeActivity.putExtra(EXTRA_NAMA_MAKANAN,namaMkn)
 
                 val jmlKalori = jumlahKaloriField.text.toString()
                 intentToHomeActivity.putExtra(EXTRA_JUMLAH_KALORI,jmlKalori)

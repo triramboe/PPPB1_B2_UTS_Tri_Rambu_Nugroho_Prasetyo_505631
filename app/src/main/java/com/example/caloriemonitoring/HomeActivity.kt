@@ -5,17 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.caloriemonitoring.GetStartedActivity.Companion.EXTRA_BB
 import com.example.caloriemonitoring.GetStartedActivity.Companion.EXTRA_BB_TUJUAN
-import com.example.caloriemonitoring.GetStartedActivity.Companion.EXTRA_NAMA
 import com.example.caloriemonitoring.GetStartedActivity.Companion.EXTRA_TANGGAL
 import com.example.caloriemonitoring.GetStartedActivity.Companion.EXTRA_TARGET
 import com.example.caloriemonitoring.GetStartedActivity.Companion.EXTRA_TUJUAN
 import com.example.caloriemonitoring.InputActivity.Companion.EXTRA_JENIS
 import com.example.caloriemonitoring.InputActivity.Companion.EXTRA_JUMLAH_KALORI
 import com.example.caloriemonitoring.InputActivity.Companion.EXTRA_KALORI_TERBAKAR
-import com.example.caloriemonitoring.InputActivity.Companion.EXTRA_NAMA_MAKANAN
-import com.example.caloriemonitoring.databinding.ActivityGetStartedBinding
 import com.example.caloriemonitoring.databinding.ActivityHomeBinding
-import java.sql.Date
 import java.text.SimpleDateFormat
 
 class HomeActivity : AppCompatActivity() {
@@ -30,8 +26,6 @@ class HomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
 
         val nama = intent.getStringExtra(EXTRA_NAMA)
         val target = intent.getStringExtra(EXTRA_TARGET)
@@ -48,14 +42,17 @@ class HomeActivity : AppCompatActivity() {
 
         with(binding) {
             namaHome.text = "Hai $nama"
-
             val sisaKaloriFieldText = sisaKalori ?: target
             sisakaloriFIeld.text = sisaKaloriFieldText
-
             bbField.text = "$bb"
             tbbField.text = "$goals"
             tglField.text = "$tanggal"
             mygoalsField.text = "$tujuan"
+
+            val tanggalTextView = binding.tanggalHomePage
+            val currentDate = SimpleDateFormat("dd/MM/yyyy").format(java.util.Date())
+            tanggalTextView.text = currentDate
+
 
             if(jenis == "Pagi"){
                 kaloriMakanPagi.text = "$kaloriMakanan"
@@ -63,15 +60,11 @@ class HomeActivity : AppCompatActivity() {
             }else if (jenis == "Siang"){
                 kaloriMakanSiang.text = "$kaloriMakanan"
                 kaloriWorkoutSiang.text = "$kaloriWO"
-            }else{
+            }else if (jenis == "Malam"){
                 kaloriMakanMalam.text = "$kaloriMakanan"
                 kaloriWorkoutMalam.text = "$kaloriWO"
             }
 
-
-            val tanggalTextView = binding.tanggalHomePage
-            val currentDate = SimpleDateFormat("dd/MM/yyyy").format(java.util.Date())
-            tanggalTextView.text = currentDate
 
             btnInput.setOnClickListener{
                 val intentToInputActivity = Intent(this@HomeActivity, InputActivity::class.java)
